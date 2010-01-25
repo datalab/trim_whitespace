@@ -1,0 +1,26 @@
+=trim_whitespace
+
+This trim whitespace plugin provides access to a few different methods which can be called in an after_filter to automatically format your output. While it does not provide any sort of validation, this can eliminate a lot of the unnecessary characters (like tabs and carriage returns) from your output file to make serving the pages to the client much faster.
+
+This has not been thoroughly tested, so use at your own risk.
+
+==Installation
+
+  script/plugin install git://github.com/datalab/trim_whitespace.git
+
+==Usage
+
+In any controller file, though the application_controller.rb file may be best, simply enter a new after_filter and give the filter one of the included methods.
+
+  after_filter :trim_whitespace
+
+The methods available are:
+
+- trim_whitespace
+- trim_all_whitespace
+- trim_tabs
+- trim_soft_tabs
+- trim_all_tabs
+- convert_tabs_to_soft_tabs
+- trim_carriage_returns
+- trim_double_carriage_returns
